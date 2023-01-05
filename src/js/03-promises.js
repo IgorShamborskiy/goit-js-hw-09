@@ -5,7 +5,7 @@ function onFormSubmit(event) {
   event.preventDefault()
   const { delay, step, amount } = event.target.elements;
   let deleyValue = +delay.value
-  for (let index = 0; index <= amount.value; index+=1) {
+  for (let index = 1; index <= amount.value; index++) {
     createPromise(index, deleyValue)
     .then(({ position, delay }) => {
     Notify.success(`✅ Fulfilled promise ${position} in ${delay}ms`);
